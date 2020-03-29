@@ -15,7 +15,7 @@ int main()
 {
   //declearing variables
   string item ="", destin="";
-  char ans;
+  string ans;
   double total;
   cout<<setfill('.')<<setw(60)<<'.'<<endl;
   cout<<"ITCS 2530 - Programming Assignment for week #3"<<endl;
@@ -27,11 +27,12 @@ int main()
   cout<<"Is the item fragile (y=yes/n=no)...........:";
   cin>>ans;
   //if statement, if yes variable for total changes to 2 if no continue with the code
-  if (ans=='Y'|| ans=='y')
+  transform(ans.begin(), ans.end(), ans.begin(),:: tolower);
+  if ( ans == "y"|| ans == "yes")
   {
     total=2;
   }
-  else if(ans=='N'|| ans=='n')
+  else if(ans =="n" || ans == "no")
   {}
   else{
     cout<<"Invalid entry, exiting"<<endl;
